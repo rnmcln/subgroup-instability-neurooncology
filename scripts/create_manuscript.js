@@ -195,19 +195,35 @@ children.push(new Paragraph({ children: [new PageBreak()] }));
 children.push(heading("Introduction", 1));
 
 children.push(bodyRuns([
-  new TextRun({ text: "Subgroup analysis is central to treatment individualisation in neuro-oncology.", font: "Arial", size: 24 }),
+  new TextRun({ text: "Subgroup analysis is central to treatment individualisation in neuro-oncology, where landmark trials of temozolomide,", font: "Arial", size: 24 }),
+  superRef(26),
+  new TextRun({ text: " PCV chemotherapy,", font: "Arial", size: 24 }),
+  superRef(25),
+  new TextRun({ text: " and targeted agents such as vorasidenib", font: "Arial", size: 24 }),
+  superRef(5),
+  new TextRun({ text: " have reported subgroup-stratified outcomes that inform EANO guideline recommendations.", font: "Arial", size: 24 }),
+  superRef(24),
+  new TextRun({ text: " Additional neuro-oncology trials such as CATNON", font: "Arial", size: 24 }),
+  superRef(23),
+  new TextRun({ text: " further illustrate the reliance on subgroup-level inference. Randomised trials routinely report aggregate Kaplan\u2013Meier survival curves together with subgroup-level hazard ratios, and clinicians commonly use these to infer absolute treatment benefits for specific patient groups. The interpretive hazards of subgroup analyses\u2014including risks of overinterpretation, multiplicity, and misleading inference\u2014are well recognised in the general trial-methodology literature", font: "Arial", size: 24 }),
   superRef(1),
-  new TextRun({ text: " Randomised trials routinely report aggregate Kaplan\u2013Meier survival curves together with subgroup-level hazard ratios, and clinicians commonly use these to infer absolute treatment benefits for specific patient groups. The interpretive hazards of subgroup analyses\u2014including risks of overinterpretation, multiplicity, and misleading inference\u2014are well recognised in the general trial-methodology literature", font: "Arial", size: 24 }),
+  superRef(","),
   superRef(2),
   superRef(","),
   superRef(3),
+  superRef(","),
+  superRef(16),
   superRef(","),
   superRef(30),
   new TextRun({ text: " and have recently been reiterated specifically for neuro-oncology.", font: "Arial", size: 24 }),
   superRef(31),
   new TextRun({ text: " However, a distinct limitation is less often discussed: subgroup-specific ", font: "Arial", size: 24 }),
   new TextRun({ text: "absolute", italics: true, font: "Arial", size: 24 }),
-  new TextRun({ text: " benefits\u2014expressed, for example, as differences in restricted mean survival time (RMST)\u2014are generally not uniquely determined by the published data.", font: "Arial", size: 24 }),
+  new TextRun({ text: " benefits\u2014expressed, for example, as differences in restricted mean survival time (RMST)", font: "Arial", size: 24 }),
+  superRef(10),
+  superRef(","),
+  superRef(14),
+  new TextRun({ text: "\u2014are generally not uniquely determined by the published data.", font: "Arial", size: 24 }),
   superRef(4),
 ]));
 
@@ -247,6 +263,8 @@ children.push(bodyRuns([
 children.push(bodyRuns([
   new TextRun({ text: "CheckMate 498 (NCT02617589) randomised 560 patients with newly diagnosed glioblastoma with unmethylated MGMT promoter to nivolumab plus radiotherapy or temozolomide plus radiotherapy.", font: "Arial", size: 24 }),
   superRef(6),
+  new TextRun({ text: " The control arm received the standard Stupp protocol.", font: "Arial", size: 24 }),
+  superRef(26),
   new TextRun({ text: " We digitised overall survival (OS; HR 1.31, 95% CI 1.09\u20131.58) Kaplan\u2013Meier curves and extracted subgroup hazard ratios for four factors: complete surgical resection, sex, baseline corticosteroid use, and Karnofsky performance status.", font: "Arial", size: 24 }),
 ]));
 
@@ -262,11 +280,22 @@ children.push(body("For INDIGO TTNI, the vorasidenib arm remained near S(t)=1.0 
 children.push(body("Forest plot hazard ratios were parsed from PDF text layers using pdfplumber, with manual verification against source publications. For CheckMate 498, automatic parsing produced incorrect subgroup\u2013factor assignments due to complex multi-column layout; a manually curated lookup was used as fallback (Supplementary Methods S2)."));
 
 children.push(heading("Reconstruction Model", 2));
-children.push(body("For each two-level subgroup factor, we modelled arm-specific survival using piecewise-exponential hazards. Within subgroup g and treatment arm k, the hazard function is h(t|g,k) = \u03BBg,k,j for t \u2208 [\u03C4j, \u03C4j+1). The model is fitted under two constraints. The mixture constraint requires that the prevalence-weighted combination of subgroup curves equals the digitised aggregate Kaplan\u2013Meier curve. The hazard ratio constraint requires h(t|g,treatment)/h(t|g,control) = HR_g, where HR_g is the reported subgroup-specific Cox hazard ratio."));
+children.push(bodyRuns([
+  new TextRun({ text: "For each two-level subgroup factor, we modelled arm-specific survival using piecewise-exponential hazards,", font: "Arial", size: 24 }),
+  superRef(13),
+  superRef(","),
+  superRef(17),
+  new TextRun({ text: " a flexible parametric family that accommodates non-monotone hazard trajectories without imposing a specific distributional form. Within subgroup g and treatment arm k, the hazard function is h(t|g,k) = \u03BBg,k,j for t \u2208 [\u03C4j, \u03C4j+1). The model is fitted under two constraints. The mixture constraint requires that the prevalence-weighted combination of subgroup curves equals the digitised aggregate Kaplan\u2013Meier curve. The hazard ratio constraint requires h(t|g,treatment)/h(t|g,control) = HR_g, where HR_g is the reported subgroup-specific Cox hazard ratio.", font: "Arial", size: 24 }),
+  superRef(15),
+]));
 
 children.push(body("The HR constraint warrants explicit discussion. Published subgroup HRs are typically estimated from Cox proportional hazards regression, which yields a single average HR over the observed time horizon. Our model maps this directly onto interval-specific hazard ratios, imposing proportional hazards within each subgroup. When the true treatment effect is non-proportional, this mapping is an approximation. We assess the consequences of this approximation in our validation study (Scenario D)."));
 
-children.push(body("Model parameters were estimated by minimising the mean integrated squared error (ISE) between model-implied and digitised aggregate survival curves across both arms, plus smoothness penalties on adjacent log-hazard differences and L2 regularisation. Optimisation used L-BFGS-B with multiple random initialisations."));
+children.push(bodyRuns([
+  new TextRun({ text: "Model parameters were estimated by minimising the mean integrated squared error (ISE) between model-implied and digitised aggregate survival curves across both arms, plus smoothness penalties on adjacent log-hazard differences and L2 regularisation.", font: "Arial", size: 24 }),
+  superRef(18),
+  new TextRun({ text: " Optimisation used L-BFGS-B with multiple random initialisations.", font: "Arial", size: 24 }),
+]));
 
 children.push(heading("Retained-Solution Envelope", 2));
 children.push(body("To characterise model-specification sensitivity, we systematically varied three classes of modelling choices over an investigator-defined grid: 5 knot placement configurations (2 to 5 internal knots at regular or log-spaced intervals), 6 smoothness penalty levels (\u03B1 \u2208 {0, 0.01, 0.1, 1, 10, 100}), and 4 regularisation strengths (\u03BB \u2208 {0, 0.01, 0.1, 1}), yielding 120 candidate specifications per factor. This grid is not exhaustive and does not claim to represent all reasonable modelling choices; it is a structured sample designed to expose instability, not to bound it. Solutions were retained if their total ISE was within a tolerance threshold (default: 30% above the minimum ISE). For each retained solution, we computed subgroup-specific 24-month RMST and between-arm RMST differences (\u0394RMST\u2082\u2084). Results are reported as the envelope (minimum, median, maximum) across retained solutions."));
@@ -281,7 +310,13 @@ children.push(heading("Information Sources and Their Roles", 2));
 children.push(body("Three information sources contribute to the analysis, each with a distinct inferential role. The aggregate Kaplan\u2013Meier curves define the mixture target: any valid subgroup decomposition must reproduce these observed curves when combined according to subgroup prevalences. The subgroup prevalences (from reported sample sizes) determine the mixture weights. The subgroup hazard ratios add between-arm constraints. No single source renders the problem identified; together they constrain the solution space to a region that our model-specification search samples. The retained-solution envelope reflects the portion of this region explored by our parametric framework."));
 
 children.push(heading("Simulation Validation", 2));
-children.push(body("To assess the calibration of retained-solution envelopes, we conducted a simulation study using synthetic two-subgroup trials with known ground-truth survival curves. For each scenario, individual patient data were generated from subgroup-specific exponential hazards, aggregated to produce Kaplan\u2013Meier curves and subgroup HR estimates (from observed event-rate ratios), and then processed through the reconstruction framework. Coverage was defined as the proportion of replicates in which the retained-solution envelope for \u0394RMST\u2082\u2084 contained the true value computed from the generating model."));
+children.push(bodyRuns([
+  new TextRun({ text: "To assess the calibration of retained-solution envelopes, we conducted a simulation study following standard principles of trial simulation.", font: "Arial", size: 24 }),
+  superRef(27),
+  superRef(","),
+  superRef(28),
+  new TextRun({ text: " Synthetic two-subgroup trials with known ground-truth survival curves were generated. For each scenario, individual patient data were generated from subgroup-specific exponential hazards, aggregated to produce Kaplan\u2013Meier curves and subgroup HR estimates (from observed event-rate ratios), and then processed through the reconstruction framework. Coverage was defined as the proportion of replicates in which the retained-solution envelope for \u0394RMST\u2082\u2084 contained the true value computed from the generating model.", font: "Arial", size: 24 }),
+]));
 
 children.push(body("Five scenarios were designed to span a range of conditions:"));
 
@@ -309,7 +344,11 @@ children.push(bodyRuns([
 children.push(body("Each scenario was run with 50 independent replicates (100 tests per scenario: two subgroups per replicate), for a total of 500 coverage evaluations. The default 30% ISE tolerance was used throughout. We additionally assessed tolerance sensitivity by varying the threshold from 10% to 50% on a subset of scenarios."));
 
 children.push(heading("Sensitivity Analyses", 2));
-children.push(body("Four additional sensitivity analyses assessed robustness on the real trial data. Tolerance sensitivity examined how envelope width changed across ISE thresholds (20\u201340% for INDIGO; 5\u201330% for CheckMate 498). Time-varying HR sensitivity allowed piecewise-constant HR(t) with an anchoring penalty. Parametric family sensitivity compared piecewise-exponential results with Weibull and Royston\u2013Parmar restricted cubic spline alternatives. HR uncertainty was propagated via log-normal bootstrap (200 replicates)."));
+children.push(bodyRuns([
+  new TextRun({ text: "Four additional sensitivity analyses assessed robustness on the real trial data. Tolerance sensitivity examined how envelope width changed across ISE thresholds (20\u201340% for INDIGO; 5\u201330% for CheckMate 498). Time-varying HR sensitivity allowed piecewise-constant HR(t) with an anchoring penalty. Parametric family sensitivity compared piecewise-exponential results with Weibull and Royston\u2013Parmar restricted cubic spline alternatives.", font: "Arial", size: 24 }),
+  superRef(12),
+  new TextRun({ text: " HR uncertainty was propagated via log-normal bootstrap (200 replicates).", font: "Arial", size: 24 }),
+]));
 
 children.push(new Paragraph({ children: [new PageBreak()] }));
 
@@ -408,10 +447,16 @@ children.push(bodyRuns([
   superRef(8),
   new TextRun({ text: " and Bayesian hierarchical models", font: "Arial", size: 24 }),
   superRef(9),
+  superRef(","),
+  superRef(20),
   new TextRun({ text: " improve estimation but assume identifiability. RMST-based approaches", font: "Arial", size: 24 }),
   superRef(10),
   superRef(","),
   superRef(11),
+  superRef(","),
+  superRef(21),
+  superRef(","),
+  superRef(22),
   new TextRun({ text: " provide clinically interpretable endpoints but do not address the aggregate-to-subgroup recovery problem. IPD reconstruction methods such as that of Guyot et al.", font: "Arial", size: 24 }),
   superRef(7),
   new TextRun({ text: " and Liu et al.", font: "Arial", size: 24 }),
@@ -430,9 +475,17 @@ children.push(body("We deliberately refrain from interpreting the subgroup-speci
 
 // Limitations
 children.push(heading("Limitations", 2));
-children.push(body("Several limitations warrant emphasis. The framework depends on accurate aggregate data; digitisation error is partially characterised but not fully propagated. We analyse only two-level factor partitions, not joint strata. The 120-specification grid is an investigator-defined sample; it does not exhaustively characterise the space of admissible solutions, even within our parametric family, and different grid choices could yield wider or narrower envelopes. The Cox-HR-to-piecewise-hazard mapping is approximate. The TTNI analytical construction introduces endpoint-specific model dependence that is difficult to separate from the reconstruction model dependence. Digitisation does not recover censoring patterns, numbers at risk, or individual event times. Finally, computational cost, while moderate (~10 minutes per trial), may limit integration into rapid decision-making."));
+children.push(bodyRuns([
+  new TextRun({ text: "Several limitations warrant emphasis. The framework depends on accurate aggregate data; digitisation error is partially characterised but not fully propagated. We analyse only two-level factor partitions, not joint strata. The 120-specification grid is an investigator-defined sample; it does not exhaustively characterise the space of admissible solutions, even within our parametric family, and different grid choices could yield wider or narrower envelopes. The Cox-HR-to-piecewise-hazard mapping is approximate. The framework does not address competing risks,", font: "Arial", size: 24 }),
+  superRef(19),
+  new TextRun({ text: " which may be relevant for endpoints such as PFS where non-cancer events could alter the estimand. The TTNI analytical construction introduces endpoint-specific model dependence that is difficult to separate from the reconstruction model dependence. Digitisation does not recover censoring patterns, numbers at risk, or individual event times. Finally, computational cost, while moderate (~10 minutes per trial), may limit integration into rapid decision-making.", font: "Arial", size: 24 }),
+]));
 
-children.push(body("In summary, the instability of subgroup-specific absolute benefit estimates reconstructed from aggregate trial data is a property of the data, not a deficiency of any particular method. Making this instability visible\u2014through systematic model-specification sensitivity analysis\u2014serves clinical honesty and better-calibrated decision-making. We advocate for reporting retained-solution envelopes alongside conventional subgroup analyses, with transparent acknowledgment of their model-dependent nature."));
+children.push(bodyRuns([
+  new TextRun({ text: "In summary, the instability of subgroup-specific absolute benefit estimates reconstructed from aggregate trial data is a property of the data, not a deficiency of any particular method. Making this instability visible\u2014through systematic model-specification sensitivity analysis\u2014serves clinical honesty and better-calibrated decision-making.", font: "Arial", size: 24 }),
+  superRef(29),
+  new TextRun({ text: " We advocate for reporting retained-solution envelopes alongside conventional subgroup analyses, with transparent acknowledgment of their model-dependent nature.", font: "Arial", size: 24 }),
+]));
 
 children.push(new Paragraph({ children: [new PageBreak()] }));
 
