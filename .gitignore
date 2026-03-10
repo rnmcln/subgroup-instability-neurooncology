@@ -32,3 +32,10 @@ data/processed/
 
 # Logs
 outputs/logs/
+
+# Manuscript .docx files — excluded during peer review to avoid
+# copyright/preprint complications. The generation scripts
+# (scripts/create_manuscript.js, create_supplement.js, create_cover_letter.js)
+# are tracked; reviewers can regenerate with `node scripts/create_manuscript.js`.
+# These files will be added after acceptance.
+manuscript/*.docx
