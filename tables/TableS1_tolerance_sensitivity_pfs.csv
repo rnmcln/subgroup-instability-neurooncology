@@ -1,0 +1,9 @@
+factor,subgroup,tol_0.2,tol_0.3,tol_0.4
+Chromosome 1p/19q codeletion status,Codeleted,0.452,0.452,0.452
+Chromosome 1p/19q codeletion status,Non-codeleted,0.926,0.926,0.926
+Location of tumor at initial diagnosis,Frontal lobe,0.713,0.713,0.713
+Location of tumor at initial diagnosis,Nonfrontal lobe,1.176,1.176,1.176
+Longest diameter of tumor at baseline,<2 cm,0.705,0.705,0.705
+Longest diameter of tumor at baseline,≥2 cm,0.963,0.963,0.963
+No. of previous surgeries,1,0.734,0.734,0.734
+No. of previous surgeries,≥2,2.061,2.061,2.061

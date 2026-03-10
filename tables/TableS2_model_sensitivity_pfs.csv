@@ -1,0 +1,13 @@
+subgroup,n,hr_reported,S24_ctrl,S24_trt,RMST24_ctrl,RMST24_trt,dS24,dRMST24,factor,model
+Codeleted,172.000,0.320,0.144,0.537,13.593,19.417,0.394,5.824,Chromosome 1p/19q codeletion status,piecewise
+Non-codeleted,159.000,0.470,0.358,0.617,15.887,19.562,0.259,3.675,Chromosome 1p/19q codeletion status,piecewise
+Codeleted,,,,,,,,,Chromosome 1p/19q codeletion status,weibull
+Non-codeleted,,,,,,,,,Chromosome 1p/19q codeletion status,weibull
+Codeleted,,,,,,,,,Chromosome 1p/19q codeletion status,rp
+Non-codeleted,,,,,,,,,Chromosome 1p/19q codeletion status,rp
+Frontal lobe,222.000,0.470,0.246,0.518,15.031,18.904,0.271,3.873,Location of tumor at initial diagnosis,piecewise
+Nonfrontal lobe,109.000,0.260,0.239,0.689,14.088,20.575,0.450,6.487,Location of tumor at initial diagnosis,piecewise
+Frontal lobe,,,,,,,,,Location of tumor at initial diagnosis,weibull
+Nonfrontal lobe,,,,,,,,,Location of tumor at initial diagnosis,weibull
+Frontal lobe,,,,,,,,,Location of tumor at initial diagnosis,rp
+Nonfrontal lobe,,,,,,,,,Location of tumor at initial diagnosis,rp

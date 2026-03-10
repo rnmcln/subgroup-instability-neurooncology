@@ -1,0 +1,9 @@
+factor,subgroup,n_solutions,dRMST24_min,dRMST24_max,dRMST24_med,dS24_min,dS24_max,dS24_med,S24_ctrl_med,S24_trt_med,RMST24_ctrl_med,RMST24_trt_med,ISE_sum_med
+Chromosome 1p/19q codeletion status,Codeleted,120,5.435,5.887,5.607,0.363,0.398,0.393,0.219,0.615,14.197,19.770,0.003
+Chromosome 1p/19q codeletion status,Non-codeleted,120,3.210,4.136,3.659,0.230,0.271,0.268,0.299,0.567,15.675,19.291,0.003
+Location of tumor at initial diagnosis,Frontal lobe,120,3.377,4.090,3.705,0.254,0.271,0.269,0.292,0.561,15.541,19.217,0.003
+Location of tumor at initial diagnosis,Nonfrontal lobe,120,6.089,7.264,6.568,0.387,0.461,0.443,0.180,0.640,13.226,20.129,0.003
+Longest diameter of tumor at baseline,<2 cm,120,0.687,1.393,1.099,0.003,0.077,0.072,0.386,0.463,16.256,17.409,0.003
+Longest diameter of tumor at baseline,≥2 cm,120,4.780,5.743,5.512,0.366,0.398,0.396,0.221,0.617,14.388,19.926,0.003
+No. of previous surgeries,1,120,3.982,4.716,4.401,0.303,0.318,0.317,0.247,0.564,14.929,19.325,0.004
+No. of previous surgeries,≥2,120,4.867,6.928,5.776,0.260,0.408,0.381,0.270,0.666,14.414,20.197,0.004

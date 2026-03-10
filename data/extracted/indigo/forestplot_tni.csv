@@ -1,0 +1,20 @@
+group,subgroup,events,n,pct,hr,ci_low,ci_high
+Overall,Overall,77,331,23.3,0.26,0.15,0.43
+Age,18 to 39 yr,49,163,30.1,0.3,0.16,0.59
+Age,40 to 64 yr,28,164,17.1,0.23,0.1,0.53
+Sex,Male,43,187,23.0,0.25,0.13,0.49
+Sex,Female,34,144,23.6,0.27,0.12,0.63
+Geographic region,North America,48,193,24.9,0.18,0.09,0.39
+Geographic region,Western Europe,14,97,14.0,0.37,0.12,1.11
+Geographic region,Israel,15,41,37.0,0.3,0.1,0.84
+Location of tumor at initial diagnosis,Frontal,52,222,23.4,0.29,0.16,0.55
+Location of tumor at initial diagnosis,Nonfrontal,25,109,22.9,0.2,0.08,0.5
+Time from last surgery to randomization,<2 yr,34,130,26.2,0.28,0.12,0.64
+Time from last surgery to randomization,2 to 3 yr,34,145,23.4,0.21,0.1,0.45
+Time from last surgery to randomization,≥4 yr,9,56,16.0,0.45,0.09,2.19
+No. of previous surgeries,1,58,260,22.3,0.3,0.16,0.54
+No. of previous surgeries,≥2,19,71,27.0,0.17,0.06,0.51
+Chromosome 1p/19q codeletion status,Codeleted,27,172,15.7,0.14,0.05,0.4
+Chromosome 1p/19q codeletion status,Non-codeleted,50,159,31.4,0.34,0.18,0.62
+Longest diameter of tumor at baseline,≥2 cm,65,269,24.2,0.21,0.12,0.38
+Longest diameter of tumor at baseline,<2 cm,12,62,19.0,0.64,0.2,2.03

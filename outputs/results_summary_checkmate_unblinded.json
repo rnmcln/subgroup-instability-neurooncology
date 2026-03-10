@@ -1,0 +1,9 @@
+{
+  "trial": "CheckMate 498",
+  "phase": "unblinded",
+  "supplement_images_used": [
+    "s1ab",
+    "s1cd"
+  ],
+  "n_comparison_rows": 8
+}

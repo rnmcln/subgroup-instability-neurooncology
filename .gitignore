@@ -1,0 +1,34 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.eggs/
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Word lock files
+~$*.docx
+
+# Internal revision snapshots (not needed in public repo)
+revisions/
+
+# Processed data (empty dir, regenerated)
+data/processed/
+
+# Logs
+outputs/logs/

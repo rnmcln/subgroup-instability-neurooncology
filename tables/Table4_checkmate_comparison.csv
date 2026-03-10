@@ -1,0 +1,9 @@
+factor,subgroup,blinded_dRMST24_med,blinded_dRMST24_range,blinded_envelope_width,unblinded_dRMST24_med,unblinded_dRMST24_range,unblinded_envelope_width,median_shift,width_change_pct
+Complete resection (CRF),No,-0.339,"[-0.773, -0.061]",0.712,-0.313,"[-0.773, -0.061]",0.712,0.026,0.000
+Complete resection (CRF),Yes,-1.495,"[-1.586, -1.391]",0.196,-1.493,"[-1.577, -1.391]",0.187,0.002,-4.597
+Sex,Female,-0.120,"[-0.725, -0.025]",0.700,-0.119,"[-0.626, -0.025]",0.601,0.001,-14.129
+Sex,Male,-1.308,"[-1.357, -1.263]",0.094,-1.307,"[-1.344, -1.263]",0.081,0.002,-14.460
+Baseline corticosteroid use,No,-0.496,"[-0.949, -0.297]",0.652,-0.487,"[-0.837, -0.297]",0.540,0.009,-17.242
+Baseline corticosteroid use,Yes,-0.836,"[-1.332, -0.671]",0.662,-0.828,"[-1.280, -0.671]",0.609,0.008,-7.973
+Baseline performance status (Karnofsky scale),<=80,-0.087,"[-1.878, -0.012]",1.866,-0.085,"[-1.694, -0.012]",1.682,0.002,-9.822
+Baseline performance status (Karnofsky scale),>80,-1.314,"[-1.366, -0.434]",0.932,-1.314,"[-1.366, -0.434]",0.932,0.000,0.000

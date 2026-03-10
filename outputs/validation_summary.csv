@@ -1,0 +1,6 @@
+scenario,n_tests,coverage,mean_width,mean_abs_bias,median_abs_bias
+A_well_separated,100,0.22,0.900398,1.098734,0.9095
+B_moderate_indigo_like,100,0.14,1.109458,1.7484230000000003,1.4914999999999998
+C_near_null,100,0.26,0.9281830000000001,1.2444459999999997,0.9134
+D_non_proportional_hazards,100,0.13,1.11755,2.338833,2.37825
+E_small_sample,100,0.21,1.430464,2.6877399999999994,2.0398

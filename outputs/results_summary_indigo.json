@@ -1,0 +1,27 @@
+{
+  "trial": "INDIGO",
+  "pdf": "/sessions/gifted-lucid-edison/mnt/INDIGO and Checkmate replication/NEJMoa2304194.pdf",
+  "anchors": {
+    "vorasidenib_18m": 0.856,
+    "placebo_18m": 0.474,
+    "vorasidenib_24m": 0.8340000000000001
+  },
+  "n_factors_pfs": 4,
+  "n_factors_tni": 4,
+  "pfs_Chromosome_1p_19q_codeletion_status_Codeleted_dRMST24_med": 5.607,
+  "pfs_Chromosome_1p_19q_codeletion_status_Codeleted_dRMST24_range": "[5.435, 5.887]",
+  "pfs_Chromosome_1p_19q_codeletion_status_Non-codeleted_dRMST24_med": 3.659,
+  "pfs_Chromosome_1p_19q_codeletion_status_Non-codeleted_dRMST24_range": "[3.210, 4.136]",
+  "pfs_Location_of_tumor_at_initial_diagnosis_Frontal_lobe_dRMST24_med": 3.705,
+  "pfs_Location_of_tumor_at_initial_diagnosis_Frontal_lobe_dRMST24_range": "[3.377, 4.090]",
+  "pfs_Location_of_tumor_at_initial_diagnosis_Nonfrontal_lobe_dRMST24_med": 6.568,
+  "pfs_Location_of_tumor_at_initial_diagnosis_Nonfrontal_lobe_dRMST24_range": "[6.089, 7.264]",
+  "pfs_Longest_diameter_of_tumor_at_baseline_<2_cm_dRMST24_med": 1.099,
+  "pfs_Longest_diameter_of_tumor_at_baseline_<2_cm_dRMST24_range": "[0.687, 1.393]",
+  "pfs_Longest_diameter_of_tumor_at_baseline_\u22652_cm_dRMST24_med": 5.512,
+  "pfs_Longest_diameter_of_tumor_at_baseline_\u22652_cm_dRMST24_range": "[4.780, 5.743]",
+  "pfs_No._of_previous_surgeries_1_dRMST24_med": 4.401,
+  "pfs_No._of_previous_surgeries_1_dRMST24_range": "[3.982, 4.716]",
+  "pfs_No._of_previous_surgeries_\u22652_dRMST24_med": 5.776,
+  "pfs_No._of_previous_surgeries_\u22652_dRMST24_range": "[4.867, 6.928]"
+}
