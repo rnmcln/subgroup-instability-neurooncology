@@ -205,7 +205,7 @@ def make_envelope_composite(summary_csv, endpoint_label, fig_name, factor_order=
         add_panel_label(ax, labels[idx])
         fdf = df[df["factor"] == factor]
 
-        subgroups = fdf["subgroup"].tolist()
+        subgroups = [s.replace("Nonfrontal", "Non-frontal") for s in fdf["subgroup"].tolist()]
         n_sub = len(subgroups)
         y_positions = list(range(n_sub))
 
@@ -231,8 +231,8 @@ def make_envelope_composite(summary_csv, endpoint_label, fig_name, factor_order=
 
         # Clean up factor name for subtitle
         short = factor.replace("Chromosome 1p/19q codeletion status", "1p/19q codeletion")\
-                       .replace("Location of tumor at initial diagnosis", "Tumor location")\
-                       .replace("Longest diameter of tumor at baseline", "Tumor diameter")\
+                       .replace("Location of tumor at initial diagnosis", "Tumour location")\
+                       .replace("Longest diameter of tumor at baseline", "Tumour diameter")\
                        .replace("No. of previous surgeries", "Prior surgeries")\
                        .replace("Complete resection (CRF)", "Complete resection")\
                        .replace("Baseline corticosteroid use", "Corticosteroid use")\
@@ -268,7 +268,7 @@ def make_figure4():
         fdf = comp[comp["factor"] == factor]
 
         for i, (_, row) in enumerate(fdf.iterrows()):
-            sub = row["subgroup"]
+            sub = row["subgroup"].replace("Nonfrontal", "Non-frontal")
             bw = row["blinded_envelope_width"]
             uw = row["unblinded_envelope_width"]
             pct = row["width_change_pct"]

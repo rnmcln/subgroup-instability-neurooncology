@@ -50,9 +50,11 @@ children.push(body("We look forward to your consideration."));
 children.push(emptyLine());
 children.push(body("Sincerely,"));
 children.push(emptyLine());
-children.push(body("[Corresponding author name]"));
-children.push(body("[Affiliation]"));
-children.push(body("[Email]"));
+children.push(body("Aaron Lawson McLean"));
+children.push(body("Department of Neurosurgery, Jena University Hospital"));
+children.push(body("Friedrich Schiller University Jena"));
+children.push(body("Am Klinikum 1, 07747 Jena, Germany"));
+children.push(body("Aaron.lawsonmclean@med.uni-jena.de"));
 
 const doc = new Document({
   styles: {

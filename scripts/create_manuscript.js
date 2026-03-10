@@ -124,10 +124,15 @@ children.push(centered("Reconstructed From Aggregate Trial Data", true, 28));
 children.push(emptyLine());
 children.push(centered("Running title: Instability of reconstructed subgroup benefits", false, 20));
 children.push(emptyLine());
-children.push(centered("[Author names to be added]", false, 22));
-children.push(centered("[Affiliations to be added]", false, 20));
+children.push(centered("Aaron Lawson McLean, Julian Kahr, Anne Neumeister, Christian Senft", false, 22));
 children.push(emptyLine());
-children.push(centered("Corresponding author: [Name, address, email]", false, 20));
+children.push(centered("Department of Neurosurgery, Jena University Hospital,", false, 20));
+children.push(centered("Friedrich Schiller University Jena, Jena, Germany", false, 20));
+children.push(emptyLine());
+children.push(centered("Corresponding author: Aaron Lawson McLean", false, 20));
+children.push(centered("Department of Neurosurgery, Jena University Hospital,", false, 20));
+children.push(centered("Friedrich Schiller University Jena, Am Klinikum 1, 07747 Jena, Germany", false, 20));
+children.push(centered("Email: Aaron.lawsonmclean@med.uni-jena.de", false, 20));
 children.push(emptyLine());
 children.push(emptyLine());
 
@@ -257,7 +262,7 @@ children.push(heading("Data Sources and Extraction", 2));
 children.push(bodyRuns([
   new TextRun({ text: "INDIGO (NCT04164901) randomised 331 patients with residual or recurrent grade 2 IDH1- or IDH2-mutant glioma to vorasidenib (40 mg daily) or placebo.", font: "Arial", size: 24 }),
   superRef(5),
-  new TextRun({ text: " We digitised progression-free survival (PFS; overall HR 0.39, 95% CI 0.27\u20130.56) and time to next intervention (TTNI; overall HR 0.26, 95% CI 0.15\u20130.45) Kaplan\u2013Meier curves from the primary publication. Subgroup hazard ratios with 95% confidence intervals and sample sizes were extracted from forest plot figures for four two-level factors: chromosome 1p/19q codeletion status (codeleted, n=172 vs non-codeleted, n=159), tumour location (frontal, n=222 vs nonfrontal, n=109), longest tumour diameter (<2 cm, n=62 vs \u22652 cm, n=269), and number of previous surgeries (1, n=260 vs \u22652, n=71).", font: "Arial", size: 24 }),
+  new TextRun({ text: " We digitised progression-free survival (PFS; overall HR 0.39, 95% CI 0.27\u20130.56) and time to next intervention (TTNI; overall HR 0.26, 95% CI 0.15\u20130.45) Kaplan\u2013Meier curves from the primary publication. Subgroup hazard ratios with 95% confidence intervals and sample sizes were extracted from forest plot figures for four two-level factors: chromosome 1p/19q codeletion status (codeleted, n=172 vs non-codeleted, n=159), tumour location (frontal, n=222 vs non-frontal, n=109), longest tumour diameter (<2 cm, n=62 vs \u22652 cm, n=269), and number of previous surgeries (1, n=260 vs \u22652, n=71).", font: "Arial", size: 24 }),
 ]));
 
 children.push(bodyRuns([
@@ -389,7 +394,7 @@ const pfsSurg = pfsData.filter(r => r.factor === "No. of previous surgeries");
 
 children.push(body(`Table 1 and Figure 2 present retained-solution envelopes for INDIGO PFS \u0394RMST\u2082\u2084 by subgroup factor. All \u0394RMST\u2082\u2084 values were positive across all factors and retained solutions, consistent with the overall HR of 0.39 favouring vorasidenib. However, the magnitude of estimated benefit varied across model specifications in ways that standard reporting would not reveal.`));
 
-children.push(body(`For 1p/19q codeletion status, the median \u0394RMST\u2082\u2084 was ${fmt(pfsCodel[0].dRMST24_med)} months (envelope: ${fmt(pfsCodel[0].dRMST24_min)}\u2013${fmt(pfsCodel[0].dRMST24_max)}) for codeleted patients and ${fmt(pfsCodel[1].dRMST24_med)} months (${fmt(pfsCodel[1].dRMST24_min)}\u2013${fmt(pfsCodel[1].dRMST24_max)}) for non-codeleted patients. Tumour location showed wider envelopes: frontal ${fmt(pfsLoc[0].dRMST24_med)} months (${fmt(pfsLoc[0].dRMST24_min)}\u2013${fmt(pfsLoc[0].dRMST24_max)}) versus nonfrontal ${fmt(pfsLoc[1].dRMST24_med)} months (${fmt(pfsLoc[1].dRMST24_min)}\u2013${fmt(pfsLoc[1].dRMST24_max)}).`));
+children.push(body(`For 1p/19q codeletion status, the median \u0394RMST\u2082\u2084 was ${fmt(pfsCodel[0].dRMST24_med)} months (envelope: ${fmt(pfsCodel[0].dRMST24_min)}\u2013${fmt(pfsCodel[0].dRMST24_max)}) for codeleted patients and ${fmt(pfsCodel[1].dRMST24_med)} months (${fmt(pfsCodel[1].dRMST24_min)}\u2013${fmt(pfsCodel[1].dRMST24_max)}) for non-codeleted patients. Tumour location showed wider envelopes: frontal ${fmt(pfsLoc[0].dRMST24_med)} months (${fmt(pfsLoc[0].dRMST24_min)}\u2013${fmt(pfsLoc[0].dRMST24_max)}) versus non-frontal ${fmt(pfsLoc[1].dRMST24_med)} months (${fmt(pfsLoc[1].dRMST24_min)}\u2013${fmt(pfsLoc[1].dRMST24_max)}).`));
 
 children.push(body(`Tumour diameter showed the most notable instability: patients with tumours <2 cm (n=62) showed \u0394RMST\u2082\u2084 of ${fmt(pfsDiam[0].dRMST24_med)} months (${fmt(pfsDiam[0].dRMST24_min)}\u2013${fmt(pfsDiam[0].dRMST24_max)}), while patients with tumours \u22652 cm (n=269) showed ${fmt(pfsDiam[1].dRMST24_med)} months (${fmt(pfsDiam[1].dRMST24_min)}\u2013${fmt(pfsDiam[1].dRMST24_max)}). This contrast was consistent across all retained solutions, but whether it reflects genuine biological heterogeneity, prevalence-related constraints on the reconstruction (62 vs 269 patients), or a parametric artefact cannot be determined from aggregate data alone. This is precisely the kind of finding where false precision is a risk: a single point estimate would mask the modelling dependence.`));
 
@@ -464,14 +469,14 @@ children.push(bodyRuns([
   new TextRun({ text: " recover individual-level data from aggregate curves but do not address subgroup-level identifiability. Our approach complements these methods by explicitly quantifying the instability that they leave implicit.", font: "Arial", size: 24 }),
 ]));
 
-// Positioning against near-neighbor subgroup-recovery literature
+// Positioning against near-neighbour subgroup-recovery literature
 children.push(bodyRuns([
   new TextRun({ text: "Our work should be read as complementary to, rather than in competition with, the literature on reconstructing survival information from published Kaplan\u2013Meier data. Existing methods have shown that individual-level or subgroup-level survival can sometimes be usefully approximated from aggregate reporting, particularly under strong structural assumptions.", font: "Arial", size: 24 }),
   superRef(33),
   new TextRun({ text: " Our emphasis is different: rather than asking whether unreported subgroup survival can be recovered, we ask how much the resulting subgroup-specific absolute benefit estimates move when the model specification moves. The answer\u2014that estimates are substantially less determinate than point values imply\u2014is relevant regardless of which reconstruction method is used, because the underlying identifiability limitation is a property of the data, not of any particular algorithm. We note that reconstruction approaches may nonetheless be practically useful for certain purposes\u2014such as populating cost-effectiveness models or generating hypotheses for future trials\u2014even when the absolute subgroup benefit they produce is sensitive to modelling choices; our results quantify rather than preclude that sensitivity.", font: "Arial", size: 24 }),
 ]));
 
-children.push(body("We deliberately refrain from interpreting the subgroup-specific estimates as discoveries of biological heterogeneity. That nonfrontal tumour location and larger tumour diameter are associated with greater estimated vorasidenib PFS benefit may reflect genuine treatment-effect heterogeneity, prevalence-related constraints on the reconstruction, or parametric artefacts. The appropriate conclusion is that these patterns are stable across explored model specifications\u2014not that they represent established subgroup effects."));
+children.push(body("We deliberately refrain from interpreting the subgroup-specific estimates as discoveries of biological heterogeneity. That non-frontal tumour location and larger tumour diameter are associated with greater estimated vorasidenib PFS benefit may reflect genuine treatment-effect heterogeneity, prevalence-related constraints on the reconstruction, or parametric artefacts. The appropriate conclusion is that these patterns are stable across explored model specifications\u2014not that they represent established subgroup effects."));
 
 // Limitations
 children.push(heading("Limitations", 2));
@@ -484,7 +489,7 @@ children.push(bodyRuns([
 children.push(bodyRuns([
   new TextRun({ text: "In summary, the instability of subgroup-specific absolute benefit estimates reconstructed from aggregate trial data is a property of the data, not a deficiency of any particular method. Making this instability visible\u2014through systematic model-specification sensitivity analysis\u2014serves clinical honesty and better-calibrated decision-making.", font: "Arial", size: 24 }),
   superRef(29),
-  new TextRun({ text: " We advocate for reporting retained-solution envelopes alongside conventional subgroup analyses, with transparent acknowledgment of their model-dependent nature.", font: "Arial", size: 24 }),
+  new TextRun({ text: " We advocate for reporting retained-solution envelopes alongside conventional subgroup analyses, with transparent acknowledgement of their model-dependent nature.", font: "Arial", size: 24 }),
 ]));
 
 children.push(new Paragraph({ children: [new PageBreak()] }));
@@ -495,19 +500,19 @@ children.push(body("This study used only published aggregate data from previousl
 children.push(emptyLine());
 
 children.push(heading("Funding", 2));
-children.push(body("[Funding sources to be declared.]"));
+children.push(body("This research received no specific grant from any funding agency in the public, commercial, or not-for-profit sectors."));
 children.push(emptyLine());
 
 children.push(heading("Conflict of Interest Statement", 2));
-children.push(body("[Conflicts of interest to be declared.]"));
+children.push(body("The authors declare no conflicts of interest."));
 children.push(emptyLine());
 
 children.push(heading("Authorship Statement", 2));
-children.push(body("[Author contributions to be declared. All authors approved the final manuscript.]"));
+children.push(body("ALM conceived the study, developed the methodological framework, performed the analyses, interpreted the data, and drafted the manuscript. JK and AN contributed to data interpretation and critical revision of the manuscript. CS contributed to interpretation of the findings and critically revised the manuscript. All authors approved the final manuscript."));
 children.push(emptyLine());
 
 children.push(heading("Data Availability Statement", 2));
-children.push(body("All source code, extracted data, and simulation validation scripts required to reproduce the analyses are available at [repository URL]. The framework was applied to published data from Mellinghoff et al. (N Engl J Med 2023) and Omuro et al. (Neuro-Oncology 2023)."));
+children.push(body("All source code, extracted data, and simulation validation scripts required to reproduce the analyses are available at https://github.com/rnmcln/subgroup-instability-neurooncology. The framework was applied to published data from Mellinghoff et al. (N Engl J Med 2023) and Omuro et al. (Neuro-Oncology 2023)."));
 children.push(emptyLine());
 
 children.push(new Paragraph({ children: [new PageBreak()] }));
@@ -606,7 +611,8 @@ for (const [factor, subs] of Object.entries(factorN)) {
     }
     const pfsStr = pfs_row ? `${fmt(pfs_row.dRMST24_med)} [${fmt(pfs_row.dRMST24_min)}, ${fmt(pfs_row.dRMST24_max)}]` : "\u2014";
     const tniStr = tni_match ? `${fmt(tni_match.dRMST24_med)} [${fmt(tni_match.dRMST24_min)}, ${fmt(tni_match.dRMST24_max)}]` : "\u2014";
-    t1rows.push([shortFactor[factor], sub, n, pfsStr, tniStr]);
+    const displaySub = sub.replace("Nonfrontal", "Non-frontal");
+    t1rows.push([shortFactor[factor], displaySub, n, pfsStr, tniStr]);
   }
 }
 

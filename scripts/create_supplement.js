@@ -107,6 +107,22 @@ children.push(new Paragraph({
     text: "Instability of Subgroup-Specific Treatment Benefits Reconstructed From Aggregate Trial Data",
     font: "Arial", size: 22, italics: true,
   })],
+  spacing: { after: 120, line: 480 },
+}));
+children.push(new Paragraph({
+  alignment: AlignmentType.CENTER,
+  children: [new TextRun({
+    text: "Aaron Lawson McLean, Julian Kahr, Anne Neumeister, Christian Senft",
+    font: "Arial", size: 20,
+  })],
+  spacing: { after: 80, line: 480 },
+}));
+children.push(new Paragraph({
+  alignment: AlignmentType.CENTER,
+  children: [new TextRun({
+    text: "Department of Neurosurgery, Jena University Hospital, Friedrich Schiller University Jena, Jena, Germany",
+    font: "Arial", size: 18, italics: true,
+  })],
   spacing: { after: 200, line: 480 },
 }));
 children.push(emptyLine());
@@ -238,17 +254,17 @@ children.push(new Paragraph({
 children.push(makeTable(
   ["Scenario", "N tests", "Coverage", "Mean width (mo)", "Mean |bias| (mo)", "Median |bias| (mo)"],
   [
-    ["A: Well-separated", "20", "20%", "0.66", "0.89", "0.75"],
-    ["B: INDIGO-like", "20", "30%", "1.07", "1.49", "1.28"],
-    ["C: Near-null", "20", "30%", "0.77", "0.89", "0.56"],
-    ["D: Non-PH", "20", "5%", "1.09", "2.25", "2.02"],
-    ["E: Small sample", "20", "15%", "1.41", "2.27", "1.70"],
+    ["A: Well-separated", "100", "22%", "0.90", "1.10", "0.91"],
+    ["B: INDIGO-like", "100", "14%", "1.11", "1.75", "1.49"],
+    ["C: Near-null", "100", "26%", "0.93", "1.24", "0.91"],
+    ["D: Non-PH", "100", "13%", "1.12", "2.34", "2.38"],
+    ["E: Small sample", "100", "21%", "1.43", "2.69", "2.04"],
   ]
 ));
 
 children.push(emptyLine());
 
-children.push(body("Coverage ranged from 5% (non-proportional hazards, scenario D) to 30% (INDIGO-like and near-null scenarios). These values are well below the nominal 95% level that would be expected of a formal confidence region, confirming that the retained-solution envelopes should be interpreted as model-specification sensitivity ranges rather than as statistical confidence intervals or identifiability bounds. The low coverage under non-proportional hazards (scenario D) reflects the expected consequences of imposing constant HRs when the true treatment effect varies over time. Mean absolute bias ranged from 0.89 months (well-specified, well-separated scenario) to 2.27 months (small sample), indicating that the envelope midpoint provides only a rough guide to the true subgroup effect."));
+children.push(body("Coverage ranged from 13% (non-proportional hazards, Scenario D) to 26% (near-null, Scenario C). These values are well below the nominal 95% level that would be expected of a formal confidence region, confirming that the retained-solution envelopes should be interpreted as model-specification sensitivity ranges rather than as statistical confidence intervals or identifiability bounds. The low coverage under non-proportional hazards (Scenario D) reflects the expected consequences of imposing constant HRs when the true treatment effect varies over time. Mean absolute bias ranged from 1.10 months (well-separated scenario) to 2.69 months (small sample), indicating that the envelope midpoint provides only a rough guide to the true subgroup effect."));
 
 children.push(body("These results are discussed honestly in the main text and motivate our use of the term retained-solution envelope rather than feasible set or confidence region. The practical value of the method lies in revealing which subgroup factors show large variation across model specifications (suggesting uncertain heterogeneity) versus those that show consistently directional effects (suggesting more robust patterns), rather than in providing precise subgroup-specific effect estimates."));
 
